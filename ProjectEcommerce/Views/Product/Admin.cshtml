@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EcommerceProject.Models.Product>
+
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h1>Admin</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.p_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.p_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.p_company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.p_price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_price)
+            </td>
+            <td>
+                 @Html.ActionLink("Edit", "Edit", new {  id=item.p_id  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.p_id }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.p_id })
+              
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

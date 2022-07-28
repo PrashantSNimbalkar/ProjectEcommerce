@@ -1,0 +1,50 @@
+﻿@model EcommerceProject.Models.User
+
+@{
+    ViewData["Title"] = "EditProfile";
+}
+
+<h1>EditProfile</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditProfile">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="u_id" class="control-label"></label>
+                <input asp-for="u_id" class="form-control" />
+                <span asp-validation-for="u_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="u_name" class="control-label"></label>
+                <input asp-for="u_name" class="form-control" />
+                <span asp-validation-for="u_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="u_email" class="control-label"></label>
+                <input asp-for="u_email" class="form-control" />
+                <span asp-validation-for="u_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="u_password" class="control-label"></label>
+                <input asp-for="u_password" class="form-control" />
+                <span asp-validation-for="u_password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="u_roleid" class="control-label"></label>
+                <input asp-for="u_roleid" class="form-control" />
+                <span asp-validation-for="u_roleid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EcommerceProject.Models.User>
+
+@{
+    ViewData["Title"] = "AllUsers";
+}
+
+<h1>AllUsers</h1>
+
+<p>
+    <a asp-action="Register">Add New User</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.u_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.u_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.u_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.u_password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.u_roleid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_roleid)
+            </td>
+            <td>
+                @Html.ActionLink("Edit Profile", "EditProfile", new { id=item.u_id }) 
+                @Html.ActionLink("View Profile", "ViewProfile", new {  id=item.u_id }) 
+                
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
